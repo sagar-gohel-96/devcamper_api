@@ -4,8 +4,6 @@ const connectDB = async () => {
     'mongodb+srv://sagar:sagar1101G@cluster0.4lslk6m.mongodb.net/?retryWrites=true&w=majority',
     {
       useNewUrlParser: true,
-      // useCreateIndex: true,
-      // useFindAndModify: false,
       useUnifiedTopology: true,
     }
   );

@@ -10,19 +10,21 @@ const BootcampSchema = new mongoose.Schema({
   slug: String,
   descreption: {
     type: String,
-    required: [true, 'Please enter a description'],
+    required: [false, 'Please enter a description'],
     maxlength: [500, 'Description can not exceed 500 characters'],
   },
   website: {
     type: String,
+
     match: [
-      /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%._\+.~#?&//=]*)/,
-      'Please use a valid URL with HTTP or HTTPS',
+      /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
+      '',
     ],
   },
   phone: {
+    required: false,
     type: String,
-    maxlength: [10, 'Please enter valid phone number'],
+    maxlength: [20, 'Please enter valid phone number'],
   },
   email: {
     type: String,
@@ -36,14 +38,15 @@ const BootcampSchema = new mongoose.Schema({
     required: [true, 'Please add an address'],
   },
   location: {
-    type: {
-      type: String,
-      enum: ['point'],
-      required: true,
-    },
+    type: String,
+    // {
+    //   type: String,
+    //   enum: ['point'],
+    //   required: true,
+    // }
     coordinates: {
       type: [Number],
-      required: true,
+      required: false,
       index: '2dsphere',
     },
     formatttedAddress: String,
