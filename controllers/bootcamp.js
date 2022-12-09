@@ -1,3 +1,5 @@
+const Bootcamp = require('../models/Bootcamp  ');
+
 // @description Get all bootcamps
 // @route  GET /api/v1/bootcamps
 // @access  Public
@@ -11,14 +13,14 @@ exports.getBootcamps = (req, res, next) => {
 // @route  GET /api/v1/bootcamps/:id
 // @access  Public
 exports.getBootcamp = (req, res, next) => {
-  res.status(200).json({ sucess: true, msg: "Show  bootcamp" });
+  res.status(200).json({ sucess: true, msg: 'Show  bootcamp' });
 };
 
 // @description Create new bootcamp
 // @route  POST /api/v1/bootcamps
 // @access  Private
 exports.createBootcamp = (req, res, next) => {
-  res.status(200).json({ sucess: true, msg: "Create new bootcamp" });
+  res.status(200).json({ sucess: true, msg: 'Create new bootcamp' });
 };
 
 // @description Update bootcamp
@@ -33,7 +35,6 @@ exports.updateBootcamp = (req, res, next) => {
 // @description Delete bootcamp
 // @route  PUT /api/v1/bootcamp/:id
 // @access  Private
-
 exports.deleteBootcamp = (req, res, next) => {
   res
     .status(200)
